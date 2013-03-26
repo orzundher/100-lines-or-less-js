@@ -35,7 +35,7 @@ p {
     padding-left: 10px;
 }   
 #header {
-    background-image: url(/images/header.png);
+    background-image: url('../images/header.png');
     background-color: #e2e2e2;
     color: #4d4d4d;
     padding: 0px;
@@ -75,7 +75,7 @@ p {
     left: 16px;
     height: 41px;
     width: 41px;
-    background: url(/images/geolocate2x.png) no-repeat;
+    background: url('../images/geolocate2x.png') no-repeat;
     background-size: 100%;
 }
 
@@ -135,38 +135,38 @@ p {
 
 /* use custom pointer that matches new color scheme */
 .esriPopupMobile .pointer.bottom {
-    background: url(/images/pointerbottom_custom.png) no-repeat;
+    background: url('../images/pointerbottom_custom.png') no-repeat;
 }
 
 /* use custom pointer that matches new color scheme */
 .esriPopupMobile .pointer.top {
-    background: url(/images/pointertop_custom.png) no-repeat;
+    background: url('../images/pointertop_custom.png') no-repeat;
 }
 
 /* use custom icon made for retina displays */
 .esriPopupMobile .titleButton.close {
-    background: url(/images/whitex2x.png) no-repeat;
+    background: url('../images/whitex2x.png') no-repeat;
     background-size: 100%;
     left: 6px;
 }
 
 /* use custom icon made for retina displays */
 .esriPopupMobile .titleButton.arrow {
-    background: url(/images/whiter2x.png) no-repeat;
+    background: url('../images/whiter2x.png') no-repeat;
     background-size: 100%;
     right: 6px;
 }
 
 /* use custom icon made for retina displays */
 .esriPopupMobile .titleButton.next {
-    background: url(/images/rightlongarrow2x.png) no-repeat;
+    background: url('../images/rightlongarrow2x.png') no-repeat;
     background-size: 100%;
     height: 16px;
 }
 
 /* use custom icon made for retina displays */
 .esriPopupMobile .titleButton.prev {
-    background: url(/images/leftlongarrow2x.png) no-repeat;
+    background: url('../images/leftlongarrow2x.png') no-repeat;
     background-size: 100%;
     height: 16px;
 }
@@ -202,6 +202,12 @@ p {
 /*********************************************/
 
 @-webkit-keyframes pulse { 
+    0% {opacity: 1.0}
+    40% {opacity: .40; }
+    100% {opacity: 1.0;}
+}
+
+@-moz-keyframes pulse { 
     0% {opacity: 1.0}
     40% {opacity: .40; }
     100% {opacity: 1.0;}

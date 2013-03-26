@@ -26,7 +26,8 @@ function zoomSession() {
 }
 function getGPS(zoom) {
     app.zoom = zoom;
-    navigator.geolocation.getCurrentPosition(showGPS);
+    navigator.geolocation.getCurrentPosition(showGPS, null,
+      { maximumAge: 600000, timeout: 10000, enableHighAccuracy: true });
 }
 function showGPS(location) {
     var eg = esri.geometry;
@@ -57,9 +58,8 @@ function showRooms(results) {
             glay.add(graphic);
         });
         app.map.addLayer(glay);
-        setTimeout(function () {
-            app.map.centerAndZoom(app.ext.getCenter(), 18);
-        }, 500)
+        $.mobile.hidePageLoadingMsg();
+        setTimeout(function () { app.map.centerAndZoom(app.ext.getCenter(), 18); }, 500)
     }
     if (navigator.geolocation) getGPS(false);
 }
@@ -73,9 +73,8 @@ function getDate(i) {
     return new Date(2013, 2, (24 + d.indexOf(t[0])), t[1], Number(t[2]))
 }
 $(document).ready(function () {
-    if (window.location.hash == "#uxMap") {
-        $.mobile.changePage("#uxMain", { transition: "none" });
-    }
+    $.mobile.showPageLoadingMsg();
+    $.mobile.changePage("#uxMain", { transition: "none" });
     var url = "http://apify.heroku.com/api/sess.json?callback=?"
     $.getJSON(url, function (data) {
         var json = { json: JSON.parse(data).sort(sortJson) };
@@ -85,10 +84,11 @@ $(document).ready(function () {
                 return getDate(li.attr("time")).toDateString();;
             }
         }).listview("refresh");
+        $.mobile.hidePageLoadingMsg();
     });
     $(document).bind("pagechange", function (event, obj) {
         if (obj.absUrl.indexOf("#uxMap") >= 0) {
-            window.scrollTo(0, 1);
+            $.mobile.showPageLoadingMsg();
             var roomNode = obj.options.link[0].attributes["room"].nodeValue;
             $("#uxFindMe").addClass('ui-disabled');
             initMap(roomNode.split("(")[0].trim());

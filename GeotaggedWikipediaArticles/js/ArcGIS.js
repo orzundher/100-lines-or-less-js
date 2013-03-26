@@ -6,7 +6,7 @@ var map, popup, gl, geoMarker, popupGraphic, geoLocation,
   mobile = navigator.userAgent.match(/(iPhone|iPod|iPad|Android)/i),
   eM = '.esriMobileNavigationItem.right', eC = '.esriMobileInfoView div div';
 function init() {
-  geoMarker = new esri.symbol.PictureMarkerSymbol('/images/geomark.png',30,30);
+  geoMarker = new esri.symbol.PictureMarkerSymbol('images/geomark.png',30,30);
   popup = new esri.dijit.PopupMobile(null, dojo.create("div"));
   popupTemplate = new esri.dijit.PopupTemplate({title:"{title} - {miles} mi."});
   map = new esri.Map("map", {basemap:'hybrid', center:[-122.45,37.75], 
@@ -90,7 +90,7 @@ function addPointsToMap(wikiData) {
     var miles = (dist / 1609.34).toFixed(1);
     var geom = new esri.geometry.Point(lon, lat);
     var point = esri.geometry.geographicToWebMercator(geom);
-    var sym = new esri.symbol.PictureMarkerSymbol('/images/wikicon.png',25,25);
+    var sym = new esri.symbol.PictureMarkerSymbol('images/wikicon.png',25,25);
     var attr = {'title': title, 'miles': miles,
       'url': "http://en.wikipedia.org/?curid=" + id, 'id': id };
     gl.add(new esri.Graphic(point, sym, attr, popupTemplate));
