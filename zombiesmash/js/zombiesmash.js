@@ -16,7 +16,7 @@ function initConnection() {
         loadEntities();
         watchId = setInterval(function () { navigator.geolocation.getCurrentPosition(updateUserLocation); }, 2000);
     }).fail(function () { alert("Error connecting to realtime service"); });
-    connection.received(recieveEntityUpdate);//setup the handler for data sent back fron signalR
+    connection.received(recieveEntityUpdate);
 }
 function stopConnection() {
     clearInterval(watchId);//stop the set interval
@@ -29,29 +29,26 @@ function togglePlaying() {
 function loadEntities() {
     usr = EntityFactory(connection.id, 'human');//create the user
     $.getJSON(mongoUrl, function (data) {//get things from mongo
-        _.each(data, function (item) {   //loop the arrayconsole.log('loading ' + item.icon);
+        _.each(data, function (item) {   //loop the array
             item.geom = new esri.geometry.Point(item.geom.x, item.geom.y, new esri.SpatialReference({ wkid: 102100 }));
             upsertEntityGraphic(item);});
     });
 }
 function getGraphicById(id){
     var graphic; 
-    _.some(map.graphics.graphics, function (item) {
-         if(item.attributes['entity'].id == id){graphic = item;return true;}
-     });
+    _.some(map.graphics.graphics, function (item) {if(item.attributes['entity'].id == id){graphic = item;return true;}});
      return graphic;
 }
 function upsertEntityGraphic(entity, broadcast) {
     entity.id == connection.id ? markerName = 'human-me' : markerName = entity.icon; //if it's the user, show the blue icon
     var sym = new esri.symbol.PictureMarkerSymbol('http://geozombies.azurewebsites.net/content/img/' + markerName + '.png', 16, 16);
-    var graphic = getGraphicById(entity.id);//console.log(' upserting a ' + entity.icon + ' to the map...');
-    if (graphic) {//console.log('   found existing graphic for ' + entity.icon + ' ' + entity.id);
+    var graphic = getGraphicById(entity.id);
+    if (graphic) {
         graphic.geometry = entity.geom; //update the location
         graphic.setSymbol(sym);//set the symbol
     } else {
         map.graphics.add(new esri.Graphic(new esri.geometry.Point(entity.geom.x, entity.geom.y,
-            new esri.SpatialReference({ wkid: 102100 })), sym, { 'entity': entity }));
-    }
+            new esri.SpatialReference({ wkid: 102100 })), sym, { 'entity': entity }));}
     if (broadcast) broadcastEntityUpdate(entity);
 }
 function checkForAttacks() {
@@ -60,8 +57,7 @@ function checkForAttacks() {
             item.attributes['entity'].icon = 'deadzombie'; //kill the entity
             upsertEntityGraphic(item.attributes['entity'], true);//update users map
             $('#status').text('Smashed: ' + (++smashes));
-        }
-    });
+        }});
 }
 function getGraphicsWithinDistance(origin, distance, icon) {
     var itemsToReturn = [];
@@ -84,10 +80,7 @@ function recieveEntityUpdate(jsonEntity) {
 }
 function updateUserLocation(position) {//$('#status').text('gps ' + (++gpsCount)); console.log('GPS ' + gpsCount);
     var pt = esri.geometry.geographicToWebMercator(new esri.geometry.Point(position.coords.longitude, position.coords.latitude));
-    if (!usr.geom){
-        //$('#status').text();//clear the message
-        if( getGraphicsWithinDistance(pt, 200, 'zombie').length < 10) spawnZombies(5, pt);//create 5 new zombies near the user
-    }
+    if (getGraphicsWithinDistance(pt, 200, 'zombie').length < 10) spawnZombies(5, pt);//create 5 new zombies near the user
     usr.geom = pt;
     checkForAttacks();
     connection.send(JSON.stringify(usr));//send user to other players
@@ -100,8 +93,7 @@ function spawnZombies(count, location) {
         upsertEntityGraphic(z, true);}
 }
 function randomNearPoint(x, y, dist) {
-    var newX = (Math.random() * (2 * dist) + (x-dist)).toFixed(2) * 1;
-    var newY = (Math.random() * (2 * dist) + (y-dist)).toFixed(2) * 1;
-    return new esri.geometry.Point(newX, newY, new esri.SpatialReference({ wkid: 102100 }));
+    var newPoa = [x, y].map(function (p) { (Math.random() * (2 * dist) + (p - dist)).toFixed(2) * 1 });
+    return new esri.geometry.Point(newPoa[0], newPoa[1], new esri.SpatialReference({ wkid: 102100 }));
 }
 function showMessage(msg) {$('#notice').text(msg).fadeIn(100).fadeOut(500);}
