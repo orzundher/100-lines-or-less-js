@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=7,IE=9"> 
+		<!--The viewport meta tag is used to improve the presentation and behavior of the samples 
+		  on iOS devices-->
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"> 
+		<title>Where's Huell?</title>
+
+		<link rel="stylesheet" href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.3/js/dojo/dijit/themes/claro/claro.css">
+		<link rel="stylesheet" href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.3/js/esri/css/esri.css" />
+		<link rel="stylesheet" href="css/main.css"/> 
+
+		<script>var dojoConfig = { parseOnLoad: true };</script>
+		<script src="http://serverapi.arcgisonline.com/jsapi/arcgis/3.3/"></script>
+		<script src="js/ArcGIS.js"></script>
+	</head>
+  
+	<body class="claro">
+		<div id="mainWindow" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'headline', gutters:false" style="width:100%; height:100%;">
+
+			<div id="header" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'top'">
+				<img src="images/huellHeader.jpg" alt="huell_logo">
+			</div>
+			
+			<div data-dojo-type="dijit.layout.ContentPane" id="leftPane" data-dojo-props="region:'left'">
+		  
+				<div id="select">
+					<div class="title">Select a Region</div>
+					
+					<img id="caRegions" src="images/caRegions.jpg" usemap="#ca_regions" border="0" width="308" height="350" alt="" style="margin-left:5px" />
+					<map name="ca_regions">
+						<area id="Shasta Cascade" shape="poly" onclick="changeRegion(this.id)" onmouseout="originalImage()" onmouseover="highlightImage(this.id)" coords="127,5,35,3,31,6,29,10,28,16,29,24,34,24,34,35,29,42,32,53,30,76,47,76,46,83,71,84,75,90,76,101,87,101,91,96,97,93,103,90,105,86,112,88,129,87,"  alt="Shasta"/>
+						<area id="San Diego County" shape="poly" onclick="changeRegion(this.id)" onmouseout="originalImage()" onmouseover="highlightImage(this.id)" coords="248,315,248,342,218,346,216,341,213,338,213,330,209,323,207,320,203,316,207,312,215,315,230,315,241,315," alt="san diego"/>
+						<area id="Desert" shape="poly" onclick="changeRegion(this.id)" onmouseout="originalImage()" onmouseover="highlightImage(this.id)" coords="192,169,288,253,291,263,297,271,305,278,299,284,295,290,294,299,293,309,290,313,291,322,297,328,295,336,250,342,249,310,243,296,235,284,229,280,218,278,211,272,201,268,201,260,199,228,192,226,191,215,189,204,191,193,192,182,188,172," alt="desert"/>
+						<area id="Inland Empire" shape="poly" onclick="changeRegion(this.id)" onmouseout="originalImage()" onmouseover="highlightImage(this.id)" coords="200,270,211,274,219,280,229,281,238,292,245,303,245,311,214,313,208,310,207,305,203,300,197,294,199,286," alt="inland"/>
+						<area id="Orange County" shape="poly" onclick="changeRegion(this.id)" onmouseout="originalImage()" onmouseover="highlightImage(this.id)" coords="187,303,201,312,206,305,199,299,192,297," alt="orange"/>
+						<area id="Los Angeles County" shape="poly" onclick="changeRegion(this.id)" onmouseout="originalImage()" onmouseover="highlightImage(this.id)" coords="164,266,195,265,197,285,192,292,187,294,184,301,179,300,175,294,167,292,163,291,169,286,169,277," alt="la"/>
+						<area id="Sierra Nevada" shape="poly" onclick="changeRegion(this.id)" onmouseout="originalImage()" onmouseover="highlightImage(this.id)" coords="127,88,128,112,190,168,185,171,189,181,189,192,187,202,190,221,190,232,185,246,176,241,170,237,166,201,155,191,146,183,136,177,130,172,124,162,118,152,112,146,106,138,102,130,99,123,94,113,94,103,101,100,101,91,106,86,116,88,",alt="Sierra" />
+						<area id="Central Valley" shape="poly" onclick="changeRegion(this.id)" onmouseout="originalImage()" onmouseover="highlightImage(this.id)" coords="48,83,70,84,72,92,75,101,86,101,92,95,98,94,94,102,93,111,96,122,101,134,109,145,117,156,125,169,133,179,146,186,157,196,165,204,168,224,168,241,178,248,187,246,193,237,193,231,197,244,199,263,156,265,148,261,141,252,132,243,124,233,119,222,110,218,111,209,108,201,94,188,93,178,88,172,85,165,84,144,76,145,69,144,61,143,59,132,53,120,45,112,44,105,44,96,49,91," alt="central"/>
+						<area id="Central Coast" shape="poly" onclick="changeRegion(this.id)" onmouseout="originalImage()" onmouseover="highlightImage(this.id)" coords="87,188,97,193,108,204,107,215,114,225,122,236,133,248,143,259,153,267,161,267,169,285,159,291,153,287,142,279,131,278,117,276,111,272,110,258,108,251,104,249,101,241,95,236,90,229,86,221,81,217,76,211,73,203,78,195,80,190," alt="central_coast"/>
+						<area id="San Francisco Bay Area" onclick="changeRegion(this.id)" shape="poly" onmouseout="originalImage()" onmouseover="highlightImage(this.id)" coords="45,138,54,145,63,148,73,149,82,146,83,164,86,172,88,181,84,185,77,188,71,185,66,184,61,178,60,170,57,165,57,157,53,152,47,145," alt="sf" title="sf"   />
+						<area id="North Coast" shape="poly" onclick="changeRegion(this.id)" onmouseout="originalImage()" onmouseover="highlightImage(this.id)" coords="15,3,29,4,26,9,26,21,32,26,32,38,27,39,29,75,44,77,43,86,41,95,38,107,44,117,52,129,58,141,48,137,40,131,32,121,24,113,24,105,23,98,24,89,21,78,15,72,9,62,9,53,13,47,16,39,17,32,18,23,17,13," alt="north_coast"/>
+					</map>
+					
+				</div>
+				
+				<div id="identify">
+					<div class="title">Episode Information</div>
+					<div id="episodeInfo"></div>
+				</div>
+			</div>
+
+			<div id="map" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center'">
+			</div>
+      
+		</div>
+	
+		<div id="overlay">
+			<div>
+				<img src="images/huellHeader_reverse.jpg" class="centered_image" alt="huell_logo">
+				<p>Huell Burnley Howser was an American television host best known for "California's Gold", a travel show 
+				which explores the history, culture, and people of California.</p>
+				<p>Before his passing in 2013, Howser donated his collection of "California's Gold" episodes, as well as those of his other series,
+				to Chapman University.</p>
+				<p>This application shows the loaction and description of a few of Howser's "California Gold" episodes. Episode information was collected from
+				KCET PBS and Chapman University.</p>
+				<div style="border:none; width:250px" align="center"><a href="javascript:close()" >Enter the <i>Where's Huell?</i> Map</a></div>
+			</div>
+		</div>
+	</body>
+
+</html>
