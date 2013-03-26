@@ -7,7 +7,7 @@ var map, watchId, connection, usr = {}, smashes = 0;
 var mongoUrl = 'https://api.mongolab.com/api/1/databases/zombieattacks/collections/entities?apiKey=5aBWmfmdlk0X65WTi_6Z2TeSw4Dg1uZH';
 var EntityFactory = function (guid, icon, geom) { return { id: guid, "icon": icon, "active": true, "geom":geom }; };
 function initMap() {
-    map = new esri.Map("map", { center: [-116.5336, 33.82617], zoom: 8, basemap: "streets" });
+    map = new esri.Map("map", { center: [-116.5336, 33.82617], zoom: 8, basemap: "topo" });
     dojo.connect(map, "onLoad", initConnection);
 };
 function initConnection() {
@@ -15,16 +15,11 @@ function initConnection() {
     connection.start().done(function () {
         loadEntities();
         watchId = setInterval(function () { navigator.geolocation.getCurrentPosition(updateUserLocation); }, 2000);
-        //watchId = navigator.geolocation.watchPosition(updateUserLocation, function () { alert('GPS Error!'); }, { 'enableHighAccuracy': true, 'maximumAge': 500, frequency: 1000 });
     }).fail(function () { alert("Error connecting to realtime service"); });
-    connection.received(recieveEntityUpdate);
-    //watchId = setInterval(function () { navigator.geolocation.getCurrentPosition(updateUserLocation, function (){}, {enableHighAccuracy:true,maximumAge:20 });}, 3000);
-    //watchId = setInterval(function () { navigator.geolocation.getCurrentPosition(updateUserLocation); }, 3000);
-    //watchId = navigator.geolocation.watchPosition(updateUserLocation, function () { alert('GPS Error!'); }, { 'enableHighAccuracy': true, 'maximumAge': 500, frequency: 1000 });
+    connection.received(recieveEntityUpdate);//setup the handler for data sent back fron signalR
 }
 function stopConnection() {
     clearInterval(watchId);//stop the set interval
-    //navigator.geolocation.clearWatch(watchId);
     map.graphics.remove(getGraphicById(usr.id));//remove user from map
 }
 function togglePlaying() {
@@ -90,7 +85,7 @@ function recieveEntityUpdate(jsonEntity) {
 function updateUserLocation(position) {//$('#status').text('gps ' + (++gpsCount)); console.log('GPS ' + gpsCount);
     var pt = esri.geometry.geographicToWebMercator(new esri.geometry.Point(position.coords.longitude, position.coords.latitude));
     if (!usr.geom){
-        $('#status').text();//clear the message
+        //$('#status').text();//clear the message
         if( getGraphicsWithinDistance(pt, 200, 'zombie').length < 10) spawnZombies(5, pt);//create 5 new zombies near the user
     }
     usr.geom = pt;
