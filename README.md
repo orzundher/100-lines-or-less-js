@@ -39,7 +39,8 @@ Best of luck!
 26. [USGS Earthquakes](http://esri.github.com/100-lines-or-less-js/USGSEarthquakes/index.html) by [rjstanley](https://github.com/rjstanley)
 27. [Zombie Smash](http://esri.github.com/100-lines-or-less-js/zombiesmash/Index.html) by [dbouwman](https://github.com/dbouwman)
 28. [Where's Huell](http://esri.github.com/100-lines-or-less-js/WheresHuell/index.html) by [jsaltenberger](https://github.com/jsaltenberger)
-29. ...
+29. [Bus Race](http://esri.github.com/100-lines-or-less-js/busrace/index.html) by [tsellste](https://github.com/tsellste)
+30. ...
 
 ## Contest Period
 - Starts: 9:00 AM PST Friday, Mar 8, 2013
