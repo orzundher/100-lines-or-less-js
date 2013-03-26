@@ -38,7 +38,8 @@ Best of luck!
 25. [Geotagged Wikipedia Articles](http://esri.github.com/100-lines-or-less-js/GeotaggedWikipediaArticles/index.html) by [rjstanley](https://github.com/rjstanley)
 26. [USGS Earthquakes](http://esri.github.com/100-lines-or-less-js/USGSEarthquakes/index.html) by [rjstanley](https://github.com/rjstanley)
 27. [Zombie Smash](http://esri.github.com/100-lines-or-less-js/zombiesmash/Index.html) by [dbouwman](https://github.com/dbouwman)
-28. ...
+28. [Where's Huell](http://esri.github.com/100-lines-or-less-js/WheresHuell/index.html) by [jsaltenberger](https://github.com/jsaltenberger)
+29. ...
 
 ## Contest Period
 - Starts: 9:00 AM PST Friday, Mar 8, 2013
