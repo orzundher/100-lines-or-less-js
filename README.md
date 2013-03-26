@@ -37,7 +37,8 @@ Best of luck!
 24. [World Migration Explorer](http://esri.github.com/100-lines-or-less-js/WorldMigrationExplorer/challenge.html) by [GeotecUJI](https://github.com/GeotecUJI)
 25. [Geotagged Wikipedia Articles](http://esri.github.com/100-lines-or-less-js/GeotaggedWikipediaArticles/index.html) by [rjstanley](https://github.com/rjstanley)
 26. [USGS Earthquakes](http://esri.github.com/100-lines-or-less-js/USGSEarthquakes/index.html) by [rjstanley](https://github.com/rjstanley)
-27. ...
+27. [Zombie Smash](http://esri.github.com/100-lines-or-less-js/zombiesmash/index.html) by [dbouwman](https://github.com/dbouwman)
+28. ...
 
 ## Contest Period
 - Starts: 9:00 AM PST Friday, Mar 8, 2013
