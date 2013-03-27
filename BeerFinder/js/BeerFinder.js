@@ -49,36 +49,36 @@ locPoint = new esri.Graphic(geometry, locSymbol);
 lt = geometry.getLatitude();
 lg = geometry.getLongitude();
 $.get(baseUrl+"BeerMe.php?lat="+lt+"&lng="+lg+"&radius=70", function(data) {
-    var test = JSON.parse(data);
-	$('#resultsText').html('<p>'+test.totalResults+' breweries found!</p>');
-	if(0<test.totalResults) {addGraph(test);$("#resScroll").show()}
-	else { $("#resScroll").hide()}});
+var test = JSON.parse(data);
+$('#resultsText').html('<p>'+test.totalResults+' breweries found!</p>');
+if(0<test.totalResults) {addGraph(test);$("#resScroll").show()}
+else { $("#resScroll").hide()}});
 }
 
 function addGraph(test) {
-  $("#resultsTable").html("");
-  for (var i = 0, len = test.data.length; i < len; i++) {
-	var point = 
-	new esri.geometry.Point(test.data[i].longitude,test.data[i].latitude);
-    map.graphics.add(new esri.Graphic(point, symbol,test.data[i]));
+$("#resultsTable").html("");
+for (var i = 0, len = test.data.length; i < len; i++) {
+var point = 
+new esri.geometry.Point(test.data[i].longitude,test.data[i].latitude);
+map.graphics.add(new esri.Graphic(point, symbol,test.data[i]));
 $('#resultsTable').append('<tr><td><p><i class="icon-globe"></i> '
 +test.data[i].brewery.name + ' <small><em>(Distance: '+test.data[i].distance
 +' mi.)</em></small></p></tr></td>');}
   map.graphics.redraw();
   handle = dojo.connect(map.graphics, "onClick", onClick);
-  $("#resultsTable td").click(function(){        //function_tr
-	  var graphId = $(this).parent()[0].rowIndex;
-	  var fakeEvt = [];
-	  fakeEvt.graphic = map.graphics.graphics[graphId];
-	  fakeEvt.screenPoint = fakeEvt.graphic.geometry;
-	  map.centerAt(fakeEvt.screenPoint);
-	  onClick(fakeEvt);
+  $("#resultsTable td").click(function(){
+  var graphId = $(this).parent()[0].rowIndex;
+  var fakeEvt = [];
+  fakeEvt.graphic = map.graphics.graphics[graphId];
+  fakeEvt.screenPoint = fakeEvt.graphic.geometry;
+  map.centerAt(fakeEvt.screenPoint);
+  onClick(fakeEvt);
 });
-	if (1 == map.graphics.graphics.length) {
-	map.centerAt(map.graphics.graphics[0].geometry) } 
-	else if (1 < map.graphics.graphics.length){
-	map.setExtent((esri.graphicsExtent(map.graphics.graphics))); }
-	map.graphics.add(locPoint);
+if (1 == map.graphics.graphics.length) {
+  map.centerAt(map.graphics.graphics[0].geometry) } 
+else if (1 < map.graphics.graphics.length){
+  map.setExtent((esri.graphicsExtent(map.graphics.graphics))); }
+  map.graphics.add(locPoint);
 }
 
 function onClick(evt) {
