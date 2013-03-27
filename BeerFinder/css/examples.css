@@ -1,0 +1,38 @@
+html, body {
+    height: 100%;
+}
+.close
+{
+	opacity:0.8 !important;
+}
+#mapDiv {
+    height: 100%;
+    min-height: 100%;
+}
+#resScroll{
+	height: 200px !important;
+	overflow: auto;
+}
+#resultsTable{
+	height: 200px !important;
+	overflow: auto;
+}
+.fill { 
+    min-height: 100%;
+    height: 100%;
+}
+.scrollable{
+     overflow: scroll;
+}
+.loc {
+margin-top : 5px;
+}
+.well {
+padding:12px;
+}
+.simpleGeocoder .esriGeocoder input{
+	width:136px;
+}
+.simpleGeocoder .esriGeocoderContainer {
+	width:200px;
+}
