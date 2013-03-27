@@ -44,7 +44,8 @@ Best of luck!
 31. [Track Me](http://esri.github.com/100-lines-or-less-js/trackme/default.htm) by [sahalmir](https://github.com/sahalmir)
 32. [Pure JavaScript Geotagging](http://esri.github.com/100-lines-or-less-js/javascript_geotagging/index.html) by [ognian7](https://github.com/ognian7)
 33. [Maptrest](http://esri.github.com/100-lines-or-less-js/maptrest/maptrest.html) by [innopal](https://github.com/innopal)
-34. 
+34. [Beer Finder](http://esri.github.com/100-lines-or-less-js/BeerFinder/BeerFinder.html) by [nrgizgun](https://github.com/nrgizgun)
+35. ...
 
 ## Contest Period
 - Starts: 9:00 AM PST Friday, Mar 8, 2013
