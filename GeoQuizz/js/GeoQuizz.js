@@ -2,7 +2,8 @@ dojo.require("esri.map");
 dojo.require("esri.layers.FeatureLayer");
 dojo.require("esri.InfoWindowBase");
 var timerHandle, map, countriesLayer,queryTask,query,objectIds,sfs, countryName,graph,distParams,gsvc,fl;
-var clickTry = 0;
+var clickTry,score = 0;
+
 var maxTry = 5;
 
 dojo.ready(init);
@@ -31,23 +32,27 @@ function init() {
 }
 function checkAnswer(evt)
 {
-  var cAttr = evt.graphic.attributes;
-  var ansTitle,ansContent;
- if(cAttr.CNTRY_NAME == graph.attributes.CNTRY_NAME)
- {
-  ansTitle = '<h5 class="text-success">Success!</h5>';
-  ansContent= '<p>Great! You found '+cAttr.CNTRY_NAME+'</p>';
- }
- else {
-   ansTitle = '<h5 class="text-error">Not good ! </h5>';
-   ansContent = "You choose "+cAttr.CNTRY_NAME+
-   "<br>You must find "+graph.attributes.CNTRY_NAME;
- }
-  map.infoWindow.setTitle(ansTitle);
+  if(undefined!=evt.graphic.attributes) {
+    var cAttr = evt.graphic.attributes;
+    var ansTitle,ansContent;
+   if(cAttr.CNTRY_NAME == graph.attributes.CNTRY_NAME)
+   {
+    ansTitle = '<h5 class="text-success">Success!</h5>';
+    ansContent= '<p>Great! You found '+cAttr.CNTRY_NAME+'</p>';
+    clickTry = 0;
+    //nextround
+   }
+   else {
+     ansTitle = '<h5 class="text-error">Not good ! </h5>';
+     ansContent = "You choose "+cAttr.CNTRY_NAME+
+     "<br>You must find "+graph.attributes.CNTRY_NAME;
+   }
+   map.infoWindow.setTitle(ansTitle);
    map.infoWindow.setContent(ansContent);
-map.infoWindow.resize(200,130);
-map.infoWindow.show(evt.screenPoint,
-map.getInfoWindowAnchor(evt.screenPoint));
+  map.infoWindow.resize(200,130);
+  map.infoWindow.show(evt.screenPoint,
+  map.getInfoWindowAnchor(evt.screenPoint));
+  }
 }
 function test()
 {
