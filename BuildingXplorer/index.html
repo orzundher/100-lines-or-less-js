@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=7,IE=9">   
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+        <title>BuildingXplorer</title>
+        <style type="text/css">
+            @import "http://serverapi.arcgisonline.com/jsapi/arcgis/3.4/js/esri/css/esri.css";
+            @import "http://serverapi.arcgisonline.com/jsapi/arcgis/3.4/js/dojo/dijit/themes/claro/claro.css";
+        </style>
+	<script src="http://serverapi.arcgisonline.com/jsapi/arcgis/3.4compact"></script>
+	<!-- Load your project JavaScript and CSS -->
+	<link rel="stylesheet" type="text/css" href="css/project.css">
+	<!-- ArcGIS.js contains the code for the contest entry --> 
+        <script defer src="js/ArcGIS.js"></script>
+    </head>
+    <body class="claro">
+        <div class="titel">
+            BuildingXplorer<span class="tiny">Version 0.4 COMPACT</span>
+        </div>
+        <div id="map">
+	    <img alt="loading..." id = "loadingImg" class = "centered" src = "images/loading.svg" style="z-index: 100;">
+            <div id="swapper" class="form" style="height: auto; position: absolute; right: 10px; top: 10px;">
+                <div id="bName" class="big">NONE SELECTED</div>
+                <div id="bCombo" class='text' style="width:100%;"></div>
+                <div id="rDescr" class="text" style="height: auto;"></div>
+            </div>
+        </div>
+    </body>
+</html>
