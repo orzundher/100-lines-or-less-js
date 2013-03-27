@@ -45,7 +45,8 @@ Best of luck!
 32. [Pure JavaScript Geotagging](http://esri.github.com/100-lines-or-less-js/javascript_geotagging/index.html) by [ognian7](https://github.com/ognian7)
 33. [Maptrest](http://esri.github.com/100-lines-or-less-js/maptrest/maptrest.html) by [innopal](https://github.com/innopal)
 34. [Beer Finder](http://esri.github.com/100-lines-or-less-js/BeerFinder/BeerFinder.html) by [nrgizgun](https://github.com/nrgizgun)
-35. ...
+35. [Google Street View Madness](http://esri.github.com/100-lines-or-less-js/google-street-view-madness/index.html) by [Mark Laudon](https://github.com/MapsRus)
+36. ...
 
 ## Contest Period
 - Starts: 9:00 AM PST Friday, Mar 8, 2013
