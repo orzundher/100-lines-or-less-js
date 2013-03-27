@@ -1,0 +1,45 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=7, IE=9" />
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"
+		/>
+		<title>Pure Javascript Geotagging</title>
+		<link rel="stylesheet" type="text/css" href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.3/js/dojo/dijit/themes/claro/claro.css">
+		<link rel="stylesheet" type="text/css" href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.3/js/esri/css/esri.css" />
+		<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+
+		<script type="text/javascript">
+		  var dojoConfig = {
+			parseOnLoad: true
+		  };
+		</script>
+		<script type="text/javascript" src="http://serverapi.arcgisonline.com/jsapi/arcgis/3.3/"></script>
+		<script type="text/javascript" src="js/binaryajax.js"></script>
+		<script type="text/javascript" src="js/exif.js"></script>
+		<script type="text/javascript" src="js/FileSaver.min.js"></script>
+		<script type="text/javascript" src="js/Blob.js"></script>
+		<script type="text/javascript" src="js/map.js"></script>
+	</head>
+
+	<body class="claro" onLoad="dijit.byId('popAbout').show();dijit.byId('popAbout').hide();dijit.byId('popHelp').show();dijit.byId('popHelp').hide();">
+		<div id="mainWindow" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'headline',gutters:false"
+		style="width:100%; height:100%;">
+			<div id="popAbout" data-dojo-type="dijit/Dialog" href="about.html"></div>
+			<div id="popHelp" data-dojo-type="dijit/Dialog" href="help.html"></div>
+			
+			<div id="header" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'top'">
+				<div id="title">
+					<a href="#" title="Pure Javascript Geotagging"><img src="images/logo.gif" width="433" height="80" alt="Pure Javascript Geotagging" /></a>
+					<a href="#" onClick="dijit.byId('popAbout').show()" title="About"><img src="images/btn_about.gif" width="72" height="80" alt="About" /></a>
+					<a href="#" onClick="dijit.byId('popHelp').show()" title="Help"><img src="images/btn_help.gif" width="72" height="80" alt="Help" /></a></div>
+				<div id="menu">
+					<a href="#" onclick="window.location.reload()" title="Clear Map"><img src="images/btn_clear_map.gif" width="80" height="80" alt="Clear Map" /></a></div>	
+			</div>
+			<div id="mapCanvas" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center'"></div>
+		</div>
+	</body>
+
+</html>
