@@ -1,0 +1,114 @@
+html { 
+height: 100%; 
+width:100%; 
+}
+
+body { 
+height: 95%;
+margin: 0px 37px;
+padding: 21px 0px; 
+background-color: #000000;
+color: #333333;
+font-family:"Helvetica Neue", Helvetica, "Trebuchet MS", Arial, sans-serif;
+font-size: 14px;
+overflow: hidden;
+}
+
+a { color: #336699; }
+
+#header { 
+height: 80px; 
+background: url(../images/logo_bg.png); 
+width:100%;
+z-index:50;}
+
+.soria .dojoxExpandoTitle {
+background: -moz-linear-gradient(center top, #C5DEEA 0%, #8ABBD7 31%, #066DAB 100%) repeat scroll 0 0 transparent;
+}
+#title {
+color: #45484D;
+font-weight: bold;
+text-align: left;
+height:80px;
+overflow:hidden;
+float:left;
+}
+#title img { border: 0; }
+
+#menu {
+float: right;
+height:80px;
+overflow:hidden;
+}
+#menu img { border: 0; }
+
+#subtitle {
+color: #45484D;
+font-size: small;
+padding-left: 15px;
+text-align: left;
+}
+
+#mapCanvas {
+margin: 0;
+padding: 0;
+margin-top:-5px;
+}
+
+.roundedCorner {
+background-color: #FFFFFF;
+border: 1px solid #066DAB;
+border-radius: 4px 4px 4px 4px;
+}
+
+#status {
+font-size: 12px;
+}
+	  
+.pop { 
+width:470px;
+white-space: nowrap;
+overflow:hidden;
+text-overflow: ellipsis; 
+margin:2px;
+}	 
+
+.claro .dijitContentPane{
+padding:0;
+}
+
+.dijitDialogUnderlay {
+opacity:0.2;
+}
+
+.dijitDialogPaneContent {
+    width: 600px !important;
+}
+
+.claro .infowindow .sprite {
+	background-image: url(../images/pjsgt.infowindow.png);
+}
+
+.claro .dijitDialogTitleBar {
+background-color:#d4d4d4;
+background-image:none;
+border:none;
+}	  
+
+.claro .dijitDialogPaneContent {
+background-color:#d4d4d4;
+border-top:none;
+
+}
+
+.claro .dijitDialog {
+border: 1px solid #858585;
+}
+
+.claro .dijitDialogCloseIcon {
+	background: url(../images/dialogCloseIcon.png);
+}
+
+h1 {
+text-transform: uppercase;
+}
