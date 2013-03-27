@@ -16,27 +16,27 @@
 
 #modal_tela1
 {
-    background: rgba( 0, 0, 0, .8 ) url('/100-lines-or-less-js/24Seconds/images/1tela.jpg') 50% 50% no-repeat;
+    background: rgba( 0, 0, 0, .8 ) url('1tela.png') 50% 50% no-repeat;
 }
 
 #modal_tela2
 {
-    background: rgba( 0, 0, 0, .8 ) url('/100-lines-or-less-js/24Seconds/images/2tela.png') 50% 50% no-repeat;
+    background: rgba( 0, 0, 0, .8 ) url('2tela.png') 50% 50% no-repeat;
 }
 
 #modal_tela3
 {
-    background: rgba( 0, 0, 0, .8 ) url('/100-lines-or-less-js/24Seconds/images/3tela.png') 50% 50% no-repeat;
+    background: rgba( 0, 0, 0, .8 ) url('3tela.png') 50% 50% no-repeat;
 }
 
 #modal_endgame
 {
-    background: rgba( 0, 0, 0, .8 ) url('/100-lines-or-less-js/24Seconds/images/endGame.png') 50% 50% no-repeat;
+    background: rgba( 0, 0, 0, .8 ) url('endGame.png') 50% 50% no-repeat;
 }
 
 #modal_win
 {
-    background: rgba( 0, 0, 0, .8 ) url('/100-lines-or-less-js/24Seconds/images/CogratsScreem.png') 50% 50% no-repeat;
+    background: rgba( 0, 0, 0, .8 ) url('congratsScreen.png') 50% 50% no-repeat;
 }
 
 

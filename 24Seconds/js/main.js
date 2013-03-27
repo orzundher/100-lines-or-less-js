@@ -21,13 +21,13 @@ function startGame() {
 	while (selList.length < 25) {
 		capitalIndex = Math.floor((Math.random() * 222) + 1);
 		switch (grpLayer.graphics[capitalIndex].attributes["WEIGHT"]) {
-			case 1: if (weight1 < 10) {
+			case 1: if (weight1 < 11) {
 						selList[index] = grpLayer.graphics[capitalIndex]; index++; weight1++;
 			        } break;
-			case 2: if (weight2 < 10) {
+			case 2: if (weight2 < 11) {
 						selList[index] = grpLayer.graphics[capitalIndex]; index++; weight2++;
 				     } break;
-			case 3: if (weight3 < 5) {
+			case 3: if (weight3 < 3) {
 						selList[index] = grpLayer.graphics[capitalIndex]; index++; weight3++;
 					} break;
 		}
