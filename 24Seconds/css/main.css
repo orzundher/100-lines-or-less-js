@@ -1,0 +1,111 @@
+﻿html, body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color:#000000;
+	overflow: hidden;
+}
+
+#map
+{
+    width: 100%;
+    height: 100%;
+}
+
+#modal_tela1
+{
+    background: rgba( 0, 0, 0, .8 ) url('1tela.png') 50% 50% no-repeat;
+}
+
+#modal_tela2
+{
+    background: rgba( 0, 0, 0, .8 ) url('2tela.png') 50% 50% no-repeat;
+}
+
+#modal_tela3
+{
+    background: rgba( 0, 0, 0, .8 ) url('3tela.png') 50% 50% no-repeat;
+}
+
+#modal_endgame
+{
+    background: rgba( 0, 0, 0, .8 ) url('endGame.png') 50% 50% no-repeat;
+}
+
+#modal_win
+{
+    background: rgba( 0, 0, 0, .8 ) url('congratsScreen.png') 50% 50% no-repeat;
+}
+
+
+
+#time
+{
+    padding: 0 20px 0 0;
+    font-family: DS-DIGII_0;
+    font-size:100px;
+    color: #ffba00;
+    text-shadow: 0 0 10px #ffba00, 0 0 10px #ffba00, 0 0 15px #ffba00, 0 0 20px #ffba00, 0 0 35px #ffba00, 0 0 0px #ffba00, 0 0 0px #ffba00, 0 0 0px #ffba00;
+}
+
+.jackTips
+{
+    font-family: DS-DIGII_0;
+    color: #ffba00;
+    font-size: 20px;
+}
+
+
+#jackbauer
+{
+    width: 55px;
+    float: left;
+    margin:10px 20px 0 0;
+}
+
+body > .navbar .brand {
+    color: #000000;
+    float: right;
+    font-weight: bold;
+    margin-left: 20px;
+    padding-left: 0;
+    padding-right: 0;
+    transition: all 0.2s linear 0s;
+}
+
+body > .navbar .brand:hover {
+    text-decoration: none;
+}
+
+body > .navbar-fixed-top .brand {
+    float: left;
+    margin-left: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.navbar .brand {
+    margin: 0 0 0 -5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.status
+{
+    font-family: DS-DIGII_0;
+    color: #ffba00;
+    margin-right:5px;
+    font-size:30px;
+}
+
+.tip
+{
+    font-weight:bold;
+}
+
+#map_gc image
+{
+	cursor: pointer;
+}
