@@ -36,7 +36,12 @@ Best of luck!
 23. [Beer GeoRSS](http://esri.github.com/100-lines-or-less-js/beerGeoRSS/beerGeoRSS.html) by [boeckMt](https://github.com/boeckMt)
 24. [World Migration Explorer](http://esri.github.com/100-lines-or-less-js/WorldMigrationExplorer/challenge.html) by [GeotecUJI](https://github.com/GeotecUJI)
 25. [Geotagged Wikipedia Articles](http://esri.github.com/100-lines-or-less-js/GeotaggedWikipediaArticles/index.html) by [rjstanley](https://github.com/rjstanley)
-26. ...
+26. [USGS Earthquakes](http://esri.github.com/100-lines-or-less-js/USGSEarthquakes/index.html) by [rjstanley](https://github.com/rjstanley)
+27. [Zombie Smash](http://esri.github.com/100-lines-or-less-js/zombiesmash/Index.html) by [dbouwman](https://github.com/dbouwman)
+28. [Where's Huell](http://esri.github.com/100-lines-or-less-js/WheresHuell/index.html) by [jsaltenberger](https://github.com/jsaltenberger)
+29. [Bus Race](http://esri.github.com/100-lines-or-less-js/busrace/index.html) by [tsellste](https://github.com/tsellste)
+30. [24 Seconds](http://esri.github.com/100-lines-or-less-js/24Seconds/24Seconds.htm) by [FabianoHino](https://github.com/FabianoHino)
+31. ...
 
 ## Contest Period
 - Starts: 9:00 AM PST Friday, Mar 8, 2013

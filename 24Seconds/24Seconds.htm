@@ -1,0 +1,89 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta content='text/html, charset=UTF-8' http-equiv='Content-Type' />
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+	<title>24 Seconds</title>
+
+	<style type="text/css" media="all">
+		@font-face
+		{
+			font-family: DS-DIGII_0;
+			src:	url('ds-digii_0.eot?#iefix') format('embedded-opentype'), 
+					url('DS-DIGII_0.TTF')  format('truetype')
+		}
+	</style>
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.3/js/dojo/dijit/themes/claro/claro.css">
+	<link rel="stylesheet" href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.3/js/esri/css/esri.css">
+	<link rel="stylesheet" href="css/styles.css" />
+	<link rel="stylesheet" type='text/css' href='css/main.css'>
+</head>
+<body class="page landing">
+	<div class="navbar navbar-inverse navbar-fixed-top" style="position: relative">
+		<div class="navbar-inner">
+			<div class="container">
+				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">
+					</span>
+				</button>
+				<p id="time" class="brand" style="width: 240px;">
+					00:<span id="clock">00</span>
+				</p>
+				<div style="width: 500px; float: left">
+					<img src="images/jack.jpg" id="jackbauer" alt="Captain Jack" />
+					<ul>
+						<li class="jackTips">We've to defend: <span id="tip1" class="tip"></span></li>
+						<li class="jackTips">we're going to save <span id="tip2" class="tip"></span> people</li>
+						<li class="jackTips">I'm getting signals from: <span id="tip3" class="tip"></span></li>
+						<li class="jackTips">The population speaks: <span id="tip4" class="tip"></span></li>
+						<li class="jackTips">The country is: <span id="tip5" class="tip"></span></li>
+					</ul>
+				</div>
+				<div class="nav-collapse collapse">
+					<ul class="nav" style="float: none">
+						<li class="">
+							<img src="images/life_ico.png" title="World Life" width="25" height="25" />:<span
+								class="status" id="worldLife">0</span> </li>
+						<li class="">
+							<img src="images/shield_ico.png" title="Defended Places" width="25" height="25" />:<span
+								class="status" id="savedPlaces">0 </span></li>
+						<li class="">
+							<img src="images/burn_ico.png" title="Exploded Bombs" width="25" height="25" />:<span
+								class="status" id="exploedBombs">0 </span></li>
+						<li class="">
+							<img src="images/bomb_ico.png" title="Remaining Bombs" width="25" height="25" />:<span
+								class="status" id="remainingBombs">0 </span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="map" class="container">
+	</div>
+	<div id="modal_tela1" class="modal">
+		<input type="button" class="next" value="Next" id="btnNext" style="margin: 330px 0 0 290px" />
+	</div>
+	<div id="modal_tela2" class="modal">
+		<input type="button" class="next" value="Next" id="btnNext2" style="margin: 430px 0 0 290px" />
+	</div>
+	<div id="modal_tela3" class="modal">
+		<input type="button" class="start" value="Start" style="margin: 430px 0 0 290px" />
+	</div>
+	<div id="modal_endgame" class="modal">
+		<input type="button" class="start" value="Restart" style="margin: 430px 0 0 290px" />
+	</div>
+	<div id="modal_win" class="modal">
+		<input type="button" class="start" value="Restart" style="margin: 430px 0 0 290px" />
+	</div>
+	<input id="serviceUrl" type="hidden" value="http://services.arcgis.com/qFQYQQeTXZSPY7Fs/arcgis/rest/services/full_world_capitals/FeatureServer/0">
+	<input id="shield" type="hidden" value="images/shield_ico.png">
+	<input id="burn" type="hidden" value="images/burn_ico.png">
+</body>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="http://www.zurb.com/playground/javascripts/plugins/jquery.reveal.js"></script>
+<script src="http://serverapi.arcgisonline.com/jsapi/arcgis/3.3compact"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/main.js" type="text/javascript"></script>
+</html>
