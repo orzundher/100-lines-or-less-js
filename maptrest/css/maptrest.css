@@ -1,0 +1,341 @@
+   body{background:#F0F0F0 url("../img/body_background.jpg") repeat; text-shadow: 0px 1px 1px #FFF;}
+   h1{ font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; font-weight: 400;}
+   p{ font-size:1.231em; line-height:21px; }
+   blockquote{ border:0; margin:0; padding: 0; }
+   blockquote:before{ content: '\201C'; }
+   blockquote:after{ content: '\201D'; }
+   
+   /* First Placeholder Style 
+    --------------------------
+   */
+   .first_placeholder{ margin-top:0.2em; margin-bottom:0.2em; text-align:center;}
+   .first_placeholder h1{ color: #362f2d; font-size:4.231em; line-height: 1em; margin-bottom:0.5em; margin-top:1em;}
+   .first_placeholder a{color: #cc5944; font-size:1.385em;}      
+   .first_placeholder p{ text-align:center; }
+   .first_placeholder p span{ color: #CC5944; }
+
+   /* Second Placeholder Style 
+    ---------------------------
+   */
+   .second_placeholder{margin-top:0.2em; margin-bottom:0.2em;}
+   .second_placeholder h1{text-align:center; font-size:2.769em; color: #cc5944; line-height:1.3em; margin-bottom:1em; }
+   .second_placeholder h2{ font-size:1.845em; font-weight:normal; line-height:1em; }
+   .second_placeholder p{ padding-top:5px; }
+
+	/* Third Placeholder Style 
+    ---------------------------
+   */
+   .third_placeholder{margin-top:0.2em; heigh: 200px; width: 100%}
+   .third_placeholder h1{text-align:center; font-size:2.769em; color: #cc5944; line-height:1.3em; margin-bottom:1em; }
+   .third_placeholder h2{ font-size:1.845em; font-weight:normal; line-height:1em; }
+   .third_placeholder p{ padding-top:5px; }
+
+
+    /* Footer Style */
+
+    #footer{ margin-top: 1em;padding: 2.5em 0 2.5em;border-top: 1px solid #CCC; color: #555;}
+    #footer p, #footer p.credit{ font-size:1em; margin-bottom: 0; line-height:18px; }
+    #footer p.html5{ margin:2em auto; text-align: center; }
+
+   
+    /* =============================================================================
+   Non-Semantic Helper Classes
+   ========================================================================== */
+
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0; }
+.ir br { display: none; }
+.hidden { display: none !important; visibility: hidden; }
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.invisible { visibility: hidden; }
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+.chromeframe { margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0; }
+
+
+/* Tiles
+---------------------------------------------------------
+*/
+
+.groupThumbnailView {
+	width: 100px;
+	height: 100px;
+	margin: 3px;
+	float: left;
+	position: relative;
+	border: 5px solid #fff;
+	box-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+	background: #333;
+	-webkit-perspective: 50px;
+	-moz-perspective: 50px;
+	-o-perspective: 50px;
+	-ms-perspective: 50px;
+	perspective: 50px;
+	cursor: pointer;
+}
+
+.groupTitleBox 
+{
+    position: absolute;
+    float: left;
+	bottom: 0;
+    left: 0;
+    right: 0;
+	font-size: 9px;
+    padding: 5px;
+	margin-bottom: 0px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #FFF;
+    padding: 5px;
+    text-align: center;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    
+}
+
+.groupThumbnailView .slice{
+	width: 100px;
+	height: 100%;
+	z-index: 100;	
+}
+
+.mapThumbnailView {
+	width: 170px;
+	height: 133px;
+	margin: 3px;
+	float: left;
+	position: relative;
+	border: 5px solid #fff;
+	box-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+	background: #333;
+	-webkit-perspective: 200px;
+	-moz-perspective: 200px;
+	-o-perspective: 200px;
+	-ms-perspective: 200px;
+	perspective: 200px;
+	cursor: pointer;
+}
+
+.titleBox 
+{
+    position: absolute;
+    display:block;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: 0px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #FFF;
+    padding: 10px;
+    text-align: center;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    
+}
+
+.mapThumbnailView .slice{
+	width: 34px;
+	height: 100%;
+	z-index: 100;
+	
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	
+	-webkit-transform-origin: left center;
+	-moz-transform-origin: left center;
+	-o-transform-origin: left center;
+	-ms-transform-origin: left center;
+	transform-origin: left center;
+	
+	-webkit-transition: -webkit-transform 150ms ease-in-out;
+	-moz-transition: -moz-transform 150ms ease-in-out;
+	-o-transition: -o-transform 150ms ease-in-out;
+	-ms-transition: -ms-transform 150ms ease-in-out;
+	transition: transform 150ms ease-in-out;
+
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	backface-visibility: hidden;
+		
+}
+
+.mapThumbnailView div.view-back{
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	right: 0;
+	background: #666;
+	z-index: 0;
+}
+
+.view-back span {
+	display: block;
+	float: right;
+	padding: 5px;
+	width: 100%;
+	text-align: right;
+	font-size: 10px;
+	color: rgba(255,255,255,0.6);
+}
+
+.view-back span:first-child {
+	padding-top: 10px;
+}
+
+.view-back a {
+	display: block;
+	font-size: 18px;
+	color: rgba(255,255,255,0.4);
+	position: absolute;
+	right: 15px;
+	bottom: 15px;
+	border: 2px solid rgba(255,255,255,0.3);
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	line-height: 22px;
+	text-align: center;
+	font-weight: 500;
+}
+
+.view-back a:hover {
+	color: #fff;
+	border-color: #fff;
+}
+
+.view-back span[data-icon]:before {
+    content: attr(data-icon);
+    font-family: 'icons';
+    color: #aaa;
+	color: rgba(255,255,255,0.2);
+	text-shadow: 0 0 1px rgba(255,255,255,0.2);
+	padding-right: 5px;
+}
+
+.mapThumbnailView .s2, 
+.mapThumbnailView .s3, 
+.mapThumbnailView .s4, 
+.mapThumbnailView .s5 {
+	-webkit-transform: translate3d(33px,0,0);
+	-moz-transform: translate3d(33px,0,0);
+	-o-transform: translate3d(33px,0,0);
+	-ms-transform: translate3d(33px,0,0);
+	transform: translate3d(33px,0,0);
+}
+.mapThumbnailView .s1 {
+	background-position: 0px 0px;
+}
+.mapThumbnailView .s2 {
+	background-position: -34px 0px;
+}
+.mapThumbnailView .s3 {
+	background-position: -68px 0px;
+}
+.mapThumbnailView .s4 {
+	background-position: -102px 0px;
+}
+.mapThumbnailView .s5 {
+	background-position: -136px 0px;
+}
+
+.mapThumbnailView .overlay {
+	width: 34px;
+	height: 100%;
+	opacity: 0;
+	position: absolute;
+	-webkit-transition: opacity 150ms ease-in-out;
+	-moz-transition: opacity 150ms ease-in-out;
+	-o-transition: opacity 150ms ease-in-out;
+	-ms-transition: opacity 150ms ease-in-out;
+	transition: opacity 150ms ease-in-out;
+}
+
+.mapThumbnailView:hover .overlay {
+	opacity: 1;
+}
+
+.mapThumbnailView img {
+	position: absolute;
+	z-index: 0;
+	-webkit-transition: left 0.3s ease-in-out;
+	-o-transition: left 0.3s ease-in-out;
+	-moz-transition: left 0.3s ease-in-out;
+	-ms-transition: left 0.3s ease-in-out;
+	transition: left 0.3s ease-in-out;
+}
+
+
+.mapThumbnailView:hover .s2{
+	-webkit-transform: translate3d(33px,0,0) rotate3d(0,1,0,-45deg);
+	-moz-transform: translate3d(33px,0,0) rotate3d(0,1,0,-45deg);
+	-o-transform: translate3d(33px,0,0) rotate3d(0,1,0,-45deg);
+	-ms-transform: translate3d(33px,0,0) rotate3d(0,1,0,-45deg);
+	transform: translate3d(33px,0,0) rotate3d(0,1,0,-45deg);
+}
+.mapThumbnailView:hover .s3, 
+.mapThumbnailView:hover .s5{
+	-webkit-transform: translate3d(33px,0,0) rotate3d(0,1,0,90deg);
+	-moz-transform: translate3d(33px,0,0) rotate3d(0,1,0,90deg);
+	-o-transform: translate3d(33px,0,0) rotate3d(0,1,0,90deg);
+	-ms-transform: translate3d(33px,0,0) rotate3d(0,1,0,90deg);
+	transform: translate3d(33px,0,0) rotate3d(0,1,0,90deg);
+}
+.mapThumbnailView:hover .s4{
+	-webkit-transform: translate3d(33px,0,0) rotate3d(0,1,0,-90deg);
+	-moz-transform: translate3d(33px,0,0) rotate3d(0,1,0,-90deg);
+	-o-transform: translate3d(33px,0,0) rotate3d(0,1,0,-90deg);
+	-ms-transform: translate3d(33px,0,0) rotate3d(0,1,0,-90deg);
+	transform: translate3d(33px,0,0) rotate3d(0,1,0,-90deg);
+}
+
+.mapThumbnailView .s1 > .overlay {
+	background: -moz-linear-gradient(right, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 100%);
+	background: -webkit-linear-gradient(right, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%);
+	background: -o-linear-gradient(right, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%);
+	background: -ms-linear-gradient(right, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%);
+	background: linear-gradient(right, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%);
+}
+
+.mapThumbnailView .s2 > .overlay {
+	background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 0.2) 100%);
+	background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 0.2) 100%);
+	background: -o-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 0.2) 100%);
+	background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 0.2) 100%);
+	background: linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 0.2) 100%);
+}
+
+.mapThumbnailView .s3 > .overlay {
+	background: -moz-linear-gradient(right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 100%);
+	background: -webkit-linear-gradient(right, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.2) 100%);
+	background: -o-linear-gradient(right, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.2) 100%);
+	background: -ms-linear-gradient(right, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.2) 100%);
+	background: linear-gradient(right, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.2) 100%);
+}
+
+.mapThumbnailView .s4 > .overlay {
+	background: -moz-linear-gradient(left, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+	background: -webkit-linear-gradient(left, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0) 100%);
+	background: -o-linear-gradient(left, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0) 100%);
+	background: -ms-linear-gradient(left, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0) 100%);
+	background: linear-gradient(left, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0) 100%);
+}
+
+.mapThumbnailView .s5 > .overlay {
+	background: -moz-linear-gradient(left, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 100%);
+	background: -webkit-linear-gradient(left, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 100%);
+	background: -o-linear-gradient(left, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 100%);
+	background: -ms-linear-gradient(left, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 100%);
+	background: linear-gradient(left, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 100%);
+}
+
+
