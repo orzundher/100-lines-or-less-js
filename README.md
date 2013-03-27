@@ -42,7 +42,8 @@ Best of luck!
 29. [Bus Race](http://esri.github.com/100-lines-or-less-js/busrace/index.html) by [tsellste](https://github.com/tsellste)
 30. [24 Seconds](http://esri.github.com/100-lines-or-less-js/24Seconds/24Seconds.htm) by [FabianoHino](https://github.com/FabianoHino)
 31. [Track Me](http://esri.github.com/100-lines-or-less-js/trackme/default.htm) by [sahalmir](https://github.com/sahalmir)
-32. ...
+32. [Pure JavaScript Geotagging](http://esri.github.com/100-lines-or-less-js/javascript_geotagging/index.html) by [ognian7](https://github.com/ognian7)
+33. ...
 
 ## Contest Period
 - Starts: 9:00 AM PST Friday, Mar 8, 2013
