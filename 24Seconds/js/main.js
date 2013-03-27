@@ -21,13 +21,13 @@ function startGame() {
 	while (selList.length < 25) {
 		capitalIndex = Math.floor((Math.random() * 222) + 1);
 		switch (grpLayer.graphics[capitalIndex].attributes["WEIGHT"]) {
-			case 1: if (weight1 < 15) {
+			case 1: if (weight1 < 10) {
 						selList[index] = grpLayer.graphics[capitalIndex]; index++; weight1++;
 			        } break;
-			case 2: if (weight2 < 8) {
+			case 2: if (weight2 < 10) {
 						selList[index] = grpLayer.graphics[capitalIndex]; index++; weight2++;
 				     } break;
-			case 3: if (weight3 < 2) {
+			case 3: if (weight3 < 5) {
 						selList[index] = grpLayer.graphics[capitalIndex]; index++; weight3++;
 					} break;
 		}
@@ -35,6 +35,7 @@ function startGame() {
 	nextTarget();
 }
 function nextTarget() {
+	$('#remainingBombs').text(parseInt($('#remainingBombs').text()) - 1);
 	bombPlaceIndex++;
 	$(".tip").text("");
 	if ($("#worldLife").text() == 0 || $("#remainingBombs").text() == 0) {
@@ -87,7 +88,6 @@ function startClock() {
 			symbol = new esri.symbol.PictureMarkerSymbol($('#burn').val(), 25, 25);
 			selList[bombPlaceIndex - 1].setSymbol(symbol);
 			$('#exploedBombs').text(parseInt($('#exploedBombs').text()) + 1);
-			$('#remainingBombs').text(parseInt($('#remainingBombs').text()) - 1);
 			nextTarget();
 		}
 		if ($("#clock").text() == 20) { setTip(2, "CAP_POP"); }
