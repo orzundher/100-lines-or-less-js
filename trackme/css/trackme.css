@@ -1,0 +1,75 @@
+﻿html, body
+{
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+#map
+{
+    height: 100%;
+    width: 100%;
+}
+
+.esriSimpleSlider div
+{
+    height: 30px !important;
+    width: 30px !important;
+}
+
+.esriControlsBR
+{
+    bottom: 80px !important;
+}
+
+.divBottomPanel
+{
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    z-index: 10000;
+    bottom: 0px;
+    background: #333;
+    background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#000));
+    background: -moz-linear-gradient(top,  #666,  #000);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#000000');
+}
+
+.divSpeed
+{
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    height: 40px;
+    z-index: 10000;
+    background: #333;
+    color: #fff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#000));
+    background: -moz-linear-gradient(top,  #666,  #000);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#000000');
+}
+
+.divListItems
+{
+    position: absolute;
+    color: #fff;
+    top: 0px;
+    right: 0px;
+    z-index: 1000000;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.mblHeading 
+{
+    background-color: #000000 !important;
+}
+
+.mblColorDefault
+{
+    background-color: #000000 !important;
+    border-top-color: #9b9b9b !important;
+    border-right-color: #9b9b9b !important;
+    border-left-color: #9b9b9b !important;
+    border-bottom-color: #767676 !important;
+}
