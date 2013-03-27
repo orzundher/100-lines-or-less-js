@@ -16,7 +16,7 @@ function init() {
 	new BinaryAjax("images/example_geotag2.jpg", function(data){
 		models = data.binaryResponse; });
 	function mm(evt) { 
-		if (evt.ctrlKey && (gToMove || evt.graphic)) {
+		if (evt.shiftKey && (gToMove || evt.graphic)) {
 			if (evt.graphic) gToMove = evt.graphic;
 			ex=gToMove.attributes.e;if(ex.GPSLatitude||ex.GPSLongitude)return;
 			map.graphics.remove(gToMove);
@@ -25,11 +25,9 @@ function init() {
 			gToMove = map.graphics.add(gToMove);
 		} else {gToMove = null;} } }
 function handleDrop(evt) {
-	console.log(evt);
 	evt.preventDefault(); evt.stopPropagation();	
 	var dataTrans = evt.dataTransfer, files = dataTrans.files,
 		types = dataTrans.types;
-	console.log(dataTrans,files);	
 	if (files && files.length > 0) {
 		for (x in files) {
 			var file = files[x];
@@ -80,7 +78,7 @@ function save(id) {
 	point = map.graphics.graphics[id].geometry;
 	var latitude = toG(point.getLatitude(),"N","S");
 	var longitude = toG(point.getLongitude(),"E","W");
-	var o; for (o=2;o<1000;o++) if (bFile.getShortAt(o)==57855) break;
+	var o; for (o=2;o<9999;o++) if (bFile.getShortAt(o)==57855) break;
 	var offst=bFile.getShortAt(o+2,true),lend=(bFile.getStringAt(o+10,2)=="II");
 	buffer = new ArrayBuffer(bFile.getLength()+200),data = new DataView(buffer);
 	for (var i = 0;i<o+18;i++)	data.setUint8(i,bFile.getByteAt(i));
