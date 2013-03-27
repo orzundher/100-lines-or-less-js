@@ -267,3 +267,23 @@ p {
 }
 
 }
+
+
+
+/*********************************************/
+/*    responsive design tweaks for iPad      */
+/*********************************************/
+
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+	.esriMobileInfoView.esriMobilePopupInfoView div {
+		height:auto;
+	}
+
+}
+
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape) {
+	.esriMobileInfoView.esriMobilePopupInfoView div {
+		height:auto;
+	}
+
+}
