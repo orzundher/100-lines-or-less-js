@@ -262,4 +262,8 @@ p {
     left: 11px;
 }
 
+.esriMobileInfoView.esriMobilePopupInfoView div {
+	height:auto;
+}
+
 }

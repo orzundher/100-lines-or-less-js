@@ -52,7 +52,7 @@ function init() {
 function loadWikiPage(data) {
   var html = "<div id='pLink'><a href='" + popupGraphic.attributes.url +
     "' target=_blank>View Full Wikipedia Page</a></div>";
-  $(eC).html("<div width='99%'>"+data.parse.text['*']+"</div>");
+  popup.setContent(html + "<div width='99%'>"+data.parse.text['*']+"</div>");
 }
 function locate(map) {
   if(navigator.geolocation){ 
