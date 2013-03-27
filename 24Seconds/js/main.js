@@ -17,7 +17,7 @@ function startGame() {
 	$('#remainingBombs').text(25);
 	$('#exploedBombs').text(0);
 	var weight1 = 0, weight2 = 0, weight3 = 0, index = 0, capitalIndex;
-	selList = []; bombPlaceIndex = 0;
+	selList = []; bombPlaceIndex = 25;
 	while (selList.length < 25) {
 		capitalIndex = Math.floor((Math.random() * 222) + 1);
 		switch (grpLayer.graphics[capitalIndex].attributes["WEIGHT"]) {
@@ -36,7 +36,7 @@ function startGame() {
 }
 function nextTarget() {
 	$('#remainingBombs').text(parseInt($('#remainingBombs').text()) - 1);
-	bombPlaceIndex++;
+	bombPlaceIndex--;
 	$(".tip").text("");
 	if ($("#worldLife").text() == 0 || $("#remainingBombs").text() == 0) {
 		grpLayer.refresh();
