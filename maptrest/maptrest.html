@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=7,IE=9">   
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+	<title>Maptrest</title>
+	<link rel="stylesheet" href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.3/js/dojo/dijit/themes/claro/claro.css">
+	<link rel="stylesheet" type="text/css" href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.3/js/esri/css/esri.css">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css">
+	<link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/themes/eggplant/jquery-ui.css"> 
+	
+	<!-- Load my CSS -->
+	<link rel="stylesheet" type="text/css" href="css/maptrest.css">
+</head>
+<body class="claro">
+	<div id="mainContent" class="container" role="main">
+		<div class="row first_placeholder">
+			<header>
+				<h3>Map Groups Published by ESRI for Public Access</h3>
+				<p>Select a group to see its public Web Maps.</p>
+			</header>
+			<div class="groups" data-bind="foreach: mapGroups">		
+				<div class="groupThumbnailView">
+					<a data-bind="click: $root.selectGroup">
+						<div class="slice" data-bind="style: { 'background-image': thumbnailUrl }">
+							<span class="overlay"></span>							
+						</div>
+					</a>
+					<div class="groupTitleBox" data-bind="text: name"></div>				
+				</div>
+			</div>
+		</div>
+		<div class="row second_placeholder">
+			<div data-bind="with: selectedGroup, visible: selectedGroup()">
+				<header>
+					<h3 data-bind="text: webMapsTitle"></h3>
+					<p>Hover your mouse over a tile to see the overal rating, number of comments and number of views for each Web Map. Click on a Web Map to view it.</p>
+				</header>
+				<div class="webmaps" data-bind="foreach: webmaps, visible: webmapsVisible">
+					<div class="mapThumbnailView">
+						<div class="view-back">
+							<span class="icon-star" title="Average Rating" data-bind="text: avgRating"></span>					
+							<span class="icon-eye-open" title="Number of Views" data-bind="text: numViews"></span>					
+							<span class="icon-comments" title="Number of Comments" data-bind="text: numComments"></span>					
+							<span class="icon-tasks" title="Number of Ratings" data-bind="text: numRatings"></span>					
+						</div>					
+						<a data-bind="click: loadMap">
+							<div class="slice s1" data-bind="style: { 'background-image': thumbnailUrl }">
+								<span class="overlay"></span>
+								<div class="slice s2" data-bind="style: { 'background-image': thumbnailUrl }">
+									<span class="overlay"></span>
+									<div class="slice s3" data-bind="style: { 'background-image': thumbnailUrl }">
+										<span class="overlay"></span>
+										<div class="slice s4" data-bind="style: { 'background-image': thumbnailUrl }">
+											<span class="overlay"></span>
+											<div class="slice s5" data-bind="style: { 'background-image': thumbnailUrl }">
+												<span class="overlay"></span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+						<div class="titleBox" data-bind="text: name"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row third_placeholder">
+			<div id="map" class="roundedCorners"></div>		
+			<img id="loadingImg" alt="" src="images/progress.gif" style="position:absolute; right:50%; top:50%; z-index:100;display:none;"/>
+		</div>
+	</div>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
+	<script>var dojoConfig = { parseOnLoad: true };</script>    
+	<script type="text/javascript" src="http://serverapi.arcgisonline.com/jsapi/arcgis/3.3compact"></script>   
+	<script type="text/javascript" src="js/maptrest.js"></script> 
+</body>
+</html>
