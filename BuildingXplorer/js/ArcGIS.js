@@ -37,21 +37,11 @@ require(['dojo/dom', 'dojo/_base/connect', 'esri/layers/FeatureLayer',
                     dom.byId("bName").innerHTML = evt[0].attributes.geb_bez;
                     var fStore = new Memory();
                     for (i = evt[0].attributes.og; i > 0; i -= 1) {
-                        fStore.add({
-                            name: "OG-" + i,
-                            id: "OG-" + i,
-                            value: "OG-" + i
-                        });
+                        fStore.add({ name: "OG-" + i, id: "OG-" + i });
                     }
-                    fStore.add({
-                        name: "EG",
-                        id: "EG"
-                    });
+                    fStore.add({ name: "EG", id: "EG" });
                     for (i = 1; i <= evt[0].attributes.ug; i += 1) {
-                        fStore.add({
-                            name: "UG-" + i,
-                            id: "UG-" + i
-                        });
+                        fStore.add({ name: "UG-" + i, id: "UG-" + i });
                     }
                     cBox = new ComboBox({
                         value: "EG",
@@ -85,9 +75,11 @@ require(['dojo/dom', 'dojo/_base/connect', 'esri/layers/FeatureLayer',
                         esri.symbol.CartographicLineSymbol.JOIN_ROUND),
                         new dojo.Color([255, 0, 0, 0.5])));
                     selRoom = evt.graphic;
-                    dom.byId("rDescr").innerHTML = "<div class='lines'>Room number.: "+
-                        evt.graphic.attributes.raumnr + "</div><div class='lines'>Room name: "+
-                        evt.graphic.attributes.raumname +"</div>";
+                    dom.byId("rDescr").innerHTML =
+                    	"<div class='lines'>Room number.: " + evt.graphic.attributes.raumnr + 
+                    	"</div><div class='lines'>Room name: " + evt.graphic.attributes.raumname +
+                    	"</div><div class='lines'>Person: " + evt.graphic.attributes.personen +
+                    	"</div>";
                 }
             }
         });
