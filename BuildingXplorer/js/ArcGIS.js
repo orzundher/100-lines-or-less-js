@@ -78,6 +78,7 @@ require(['dojo/dom', 'dojo/_base/connect', 'esri/layers/FeatureLayer',
                     dom.byId("rDescr").innerHTML =
                     	"<div class='lines'>Room number.: " + evt.graphic.attributes.raumnr + 
                     	"</div><div class='lines'>Room name: " + evt.graphic.attributes.raumname +
+                    	"</div><div class='lines'>Room type: " + evt.graphic.attributes.type +
                     	"</div><div class='lines'>Person: " + evt.graphic.attributes.personen +
                     	"</div>";
                 }
